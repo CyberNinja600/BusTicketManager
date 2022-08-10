@@ -22,13 +22,4 @@ Route::get("/", [App\Http\Controllers\IndexController::class, "index"]);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/home',function(){
-//     if(auth::check()){
-//         if(auth::users()->role == '0'){
-//             return view('customer');
-//         }
-//         else{
-//             return view('home');
-//         }
-//     }
-// })->middleware('auth');
+Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
