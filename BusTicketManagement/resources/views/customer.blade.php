@@ -86,20 +86,8 @@
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li>
-								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Family</a></li>
-									<li><a href="#">CSS3 &amp; HTML5</a></li>
-									<li><a href="#">Angular JS</a></li>
-									<li><a href="#">Node JS</a></li>
-									<li><a href="#">Django &amp; Python</a></li>
-								</ul>
-							</li>
-							<li><a href="car.html">Car</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li class="active"><a href="#">Shop</a></li>
+							<li><a href="#fh5co-testimonial">Ticket-cart</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -210,7 +198,7 @@
 									<span class="price" style="color:red" >$599</span>
 									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
 								</div>
-							</div> -->
+							</div>
 							<!--- -->
 						</div>
 					</div>
@@ -347,8 +335,7 @@
 							</span>
 							<div class="feature-copy">
 								<h3>Explorer</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<p>It leaves you speechless, then turns you into a storyteller.</p>
 							</div>
 						</div>
 					</div>
@@ -365,44 +352,44 @@
 							<li class="one-forth text-center" style="background-image: url(images/place-1.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Los Angeles</h2>
+										<h2>Los Angeles</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-2.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Hongkong</h2>
+										<h2>Hongkong</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-3.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Italy</h2>
+										<h2>Italy</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-4.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Philippines</h2>
-									</div>
+										<h2>Philippines</h2> <!-- insert from Most Popular -->
+									</div> 
 								</a>
 							</li>
 
 							<li class="one-forth text-center" style="background-image: url(images/place-5.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Japan</h2>
+										<h2>Japan</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-half text-center">
 								<div class="title-bg">
 									<div class="case-studies-summary">
-										<h2>Most Popular Destinations</h2>
-										<span><a href="#">View All Destinations</a></span>
+										<h2>Get Your Ticket Now!</h2> 	<!-- insert from Most Popular -->
+										<span><a href="#">Just Trick-it</a></span>
 									</div>
 								</div>
 							</li>
@@ -446,79 +433,15 @@
 				</div>
 			</div>
 		</div>
-
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Recent From Blog</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">30% Discount to Travel All Around the World</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Planning for Vacation</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Visit Tokyo Japan</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-				</div>
-
-				<div class="col-md-12 text-center animate-box">
-					<p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Post <i class="icon-arrow-right22"></i></a></p>
-				</div>
-
-			</div>
-		</div>
 		<!-- fh5co-blog-section -->
-		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
+		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_3.jpg);">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Happy Clients</h2>
+					<h2>Trick-it The Key To Your Heart.</h2>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-4">
 					<div class="box-testimony animate-box">
 						<blockquote>
@@ -550,7 +473,7 @@
 					</div>
 					
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 		<footer>
@@ -558,27 +481,8 @@
 				<div class="container">
 					<div class="row row-bottom-padded-md">
 						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>About Travel</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Flights Routes</h3>
-							<ul>
-								<li><a href="#">Manila flights</a></li>
-								<li><a href="#">Dubai flights</a></li>
-								<li><a href="#">Bangkok flights</a></li>
-								<li><a href="#">Tokyo Flight</a></li>
-								<li><a href="#">New York Flights</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Hotels</h3>
-							<ul>
-								<li><a href="#">Boracay Hotel</a></li>
-								<li><a href="#">Dubai Hotel</a></li>
-								<li><a href="#">Singapore Hotel</a></li>
-								<li><a href="#">Manila Hotel</a></li>
-							</ul>
+							<h3>About Trickit</h3>
+							<p>Your personal ticket-counter at home</p>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
 							<h3>Interest</h3>
@@ -587,16 +491,14 @@
 								<li><a href="#">Family Travel</a></li>
 								<li><a href="#">Budget Travel</a></li>
 								<li><a href="#">Food &amp; Drink</a></li>
-								<li><a href="#">Honeymoon and Romance</a></li>
 							</ul>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
 							<h3>Best Places</h3>
 							<ul>
-								<li><a href="#">Boracay Beach</a></li>
-								<li><a href="#">Dubai</a></li>
-								<li><a href="#">Singapore</a></li>
-								<li><a href="#">Hongkong</a></li>
+								<li><a href="#">Cox's Bazar</a></li>
+								<li><a href="#">The Sundarbans</a></li>
+								<li><a href="#">Srimangal</a></li>
 							</ul>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
@@ -610,13 +512,13 @@
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 text-center">
 							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter2"></i></a>
-								<a href="#"><i class="icon-facebook2"></i></a>
-								<a href="#"><i class="icon-instagram"></i></a>
-								<a href="#"><i class="icon-dribbble2"></i></a>
-								<a href="#"><i class="icon-youtube"></i></a>
+								<a href="https://www.twitter.com" target= _blank><i class="icon-twitter2"></i></a>
+								<a href="https://www.facebook.com" target= _blank><i class="icon-facebook2"></i></a>
+								<a href="https://www.instagram.com" target= _blank><i class="icon-instagram"></i></a>
+								<a href="https://www.dribble.com" target= _blank><i class="icon-dribbble2"></i></a>
+								<a href="https://www.youtube.com" target= _blank><i class="icon-youtube"></i></a>
 							</p>
-							<p>Copyright 2016 Free Html5 <a href="#">Module</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+						
 						</div>
 					</div>
 				</div>
