@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\AllRoutes;
 
 class AdminController extends Controller
 {
@@ -22,7 +22,9 @@ class AdminController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('admin\admin');
+    {   
+        $allRoutes = AllRoutes::all();
+        return view('admin\admin', compact('allRoutes'));
     }
+
 }

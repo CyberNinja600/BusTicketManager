@@ -10,12 +10,11 @@ class AdminAddRouteController extends Controller
 {
     public function AdminRouteAddSubmit(Request $req)
     {
-        print_r($req->input());
-        // $data = new AllRoutes;
-        // $data -> route_name = $req->input();
-        // echo $data->save();
+        // print_r($req->input());
 
-        //echo $data->save();
+        $data = new AllRoutes;
+        $data -> route_name = $req->input("RouteName");
+        $data -> save();
     }
     
 }

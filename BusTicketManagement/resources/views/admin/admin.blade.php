@@ -243,7 +243,7 @@
               
               <!---table2-->
               <div>
-              <form action="AdminRouteAddSubmit" method="POST" target= _blank>
+              <form action="AdminRouteAddSubmit" method="POST">
                     @csrf
                     <div class="card">
                     <div class="card-body">
@@ -274,7 +274,9 @@
                     <div class="form-group">
                         <label for="input-6">User-Type</label>
                             <select required  class="form-control form-control-rounded" name="roleType" id="roleTypeId" placeholder="select">
-                                <option onkeyup="saveValue(this);" value="Admin">Khulna</option>
+                                @foreach($allRoutes as $item)
+                                <option onkeyup="saveValue(this);" value="Admin">  {{ $item->route_name }}  </option>
+                                @endforeach
                             </select>
                     </div>
                     <hr>
