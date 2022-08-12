@@ -114,6 +114,8 @@
 									<div class="tab-content">
 									 <div role="tabpanel" class="tab-pane active" id="bus">
 										<div class="row">
+										<form method="{{route('customer')}}" >
+											@csrf
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">From:</label>
@@ -126,18 +128,12 @@
 													<input type="text" class="form-control" id="to-place" placeholder="Khulna, Bangladesh"/>
 												</div>
 											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
+											<!-- <div class="col-xxs-12 col-xs-6 mt alternate">
 												<div class="input-field">
 													<label for="date-start">Check In:</label>
 													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
 												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Check Out:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
+											</div> -->
 											<!-- <div class="col-sm-12 mt">
 												<section>
 													<label for="class">Class:</label>
@@ -185,6 +181,7 @@
 											<div class="col-xs-12">
 												<input type="submit" class="btn btn-primary btn-block" value="Search Flight">
 											</div>
+										</form>
 										</div>
 									 </div>
 								</div>
@@ -196,10 +193,10 @@
 									<h2 style="color:red">Exclusive Limited Time Offer</h2>
 									<h3 style="color:red">Fly to Hong Kong via Los Angeles, USA</h3>
 									<span class="price" style="color:red" >$599</span>
-									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
+									<-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> 
 								</div>
 							</div>
-							<!--- -->
+							 -->
 						</div>
 					</div>
 				</div>
