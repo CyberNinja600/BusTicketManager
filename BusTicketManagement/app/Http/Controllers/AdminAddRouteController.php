@@ -10,12 +10,23 @@ class AdminAddRouteController extends Controller
 {
     public function AdminRouteAddSubmit(Request $req)
     {
-        print_r($req->input());
-        // $data = new AllRoutes;
-        // $data -> route_name = $req->input();
-        // echo $data->save();
+        // print_r($req->input());
+        $data = new AllRoutes;
+        $data -> route_name = $req->input("RouteName");
+        $data -> save();
+        return redirect()->back();
+    }
 
-        //echo $data->save();
+    public function AdminRouteDeleteSubmit(request $req)
+    {
+        // print_r($req->input());
+        // $data = AllRoutes::find($req->input("RouteName"));
+        // $data -> delete();
+        // return redirect()->back();
+
+        DB::delete('delete from all_routes where route_name = ?',[$req->input("RouteName")]);
+        return redirect()->back();
+
     }
     
 }

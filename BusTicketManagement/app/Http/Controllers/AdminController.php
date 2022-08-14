@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\AllRoutes;
 use Illuminate\Http\Request;
+use App\Models\AdminAddHighlight;
 
 class AdminController extends Controller
 {
@@ -22,7 +23,10 @@ class AdminController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('admin\admin');
+    {   
+        $allRoutes = AllRoutes::all();
+        $allHighlights = AdminAddHighlight::all();
+        return view('admin\admin', compact('allRoutes', 'allHighlights'));
     }
+
 }
