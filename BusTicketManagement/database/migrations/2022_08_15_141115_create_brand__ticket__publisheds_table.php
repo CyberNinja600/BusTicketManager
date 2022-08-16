@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer("brand_ticket_seat");
             $table->dateTime("brand_ticket_date");
             $table->integer("brand_ticket_price");
+            $table->integer("brand_ticket_author_id");
             $table->timestamps();
         });
     }

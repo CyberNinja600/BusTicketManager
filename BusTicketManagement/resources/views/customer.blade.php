@@ -119,13 +119,23 @@
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">From:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Dhaka, Bangladesh"/>
+													<!-- <input type="text" class="form-control" id="from-place" placeholder="Dhaka, Bangladesh"/> -->
+													<select required class="form-control" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
+														@foreach($allRoutes as $item)
+														<option onkeyup="saveValue(this);" style="font-weight: bold; color:#f49048;" value="{{ $item->route_name }}">{{ $item->route_name }} </option>
+														@endforeach
+													</select>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">To:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="Khulna, Bangladesh"/>
+													<!-- <input type="text" class="form-control" id="to-place" placeholder="Khulna, Bangladesh"/> -->
+													<select required class="form-control" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
+														@foreach($allRoutes as $item)
+														<option onkeyup="saveValue(this);" style="font-weight: bold; color:#f49048;" value="{{ $item->route_name }}">{{ $item->route_name }} </option>
+														@endforeach
+													</select>
 												</div>
 											</div>
 											<!-- <div class="col-xxs-12 col-xs-6 mt alternate">
@@ -148,48 +158,7 @@
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
 													<label for="class">Seat:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
-														<option value="10">10</option>
-														<option value="11">11</option>
-														<option value="12">12</option>
-														<option value="13">13</option>
-														<option value="14">14</option>
-														<option value="15">15</option>
-														<option value="16">16</option>
-														<option value="17">17</option>
-														<option value="18">18</option>
-														<option value="19">19</option>
-														<option value="20">20</option>
-														<option value="21">21</option>
-														<option value="22">22</option>
-														<option value="23">23</option>
-														<option value="24">24</option>
-														<option value="25">25</option>
-														<option value="26">26</option>
-														<option value="27">27</option>
-														<option value="28">28</option>
-														<option value="29">29</option>
-														<option value="30">30</option>
-														<option value="31">31</option>
-														<option value="32">32</option>
-														<option value="33">33</option>
-														<option value="34">34</option>
-														<option value="35">35</option>
-														<option value="36">36</option>
-														<option value="37">37</option>
-														<option value="38">38</option>
-														<option value="39">39</option>
-														<option value="40">Full-House</option>
+													<input name="Ticket_Price" type="number" class="form-control rounded-0" placeholder="BDT" value="1" required min="1" max="39" step="1" pattern="\d*">
 													</select>
 												</section>
 											</div>

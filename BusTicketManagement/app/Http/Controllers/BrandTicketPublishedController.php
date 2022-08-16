@@ -17,6 +17,7 @@ class BrandTicketPublishedController extends Controller
 
         $author_id = Auth::user()->id;
         $data = new Brand_Ticket_Published;
+        $data->brand_ticket_author_id = $author_id;
         $data -> brand_ticket_from = $req->input("Start_RouteName");
         $data -> brand_ticket_to = $req->input("Destination_RouteName");
         $data -> brand_ticket_seat = $req->input("No_Seats");
