@@ -37,3 +37,5 @@ Route::POST('AdminAddHighlightDeleteSubmit','App\Http\Controllers\AdminAddHighli
 
 
 Route::POST('BrandAddTicketSubmit','App\Http\Controllers\BrandTicketPublishedController@BrandAddTicketSubmit');
+
+Route::POST('CustomerAddTicketSubmit','App\Http\Controllers\CustomerTicketInfoController@CustomerAddTicketSubmit');

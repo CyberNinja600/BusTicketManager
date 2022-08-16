@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomerTicketInfo extends Model
 {
-    use HasFactory;
+    protected $table="customer_ticketinfo";
+    public $timestamp = false;
 }
