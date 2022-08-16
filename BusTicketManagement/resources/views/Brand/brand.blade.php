@@ -41,9 +41,12 @@
         <!--Start sidebar-wrapper-->
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="brand-logo">
-                <a href="#">
-                    BRAND PANEL
+
+                <h3>
+                <a style="color:#FFFAF0">
+                    <i>GreenLine</i>
                 </a>
+                </h3>
             </div>
             <ul class="sidebar-menu do-nicescrol">
                 <li class="sidebar-header">MAIN NAVIGATION</li>

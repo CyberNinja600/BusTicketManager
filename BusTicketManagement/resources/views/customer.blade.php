@@ -10,7 +10,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Travel &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title><Tick-IT></Tick-IT> &mdash;</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -81,7 +81,7 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+					<h1 id="fh5co-logo"><a href=""><i class="icon-airplane"></i>Tick-IT</a></h1>
 					
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
@@ -107,7 +107,7 @@
 								  <!-- Nav tabs -->
 								   <ul class="nav nav-tabs" role="tablist">
 								      <li role="presentation" class="active">
-								      	<a href="#bus" aria-controls="bus" role="tab" data-toggle="tab">Bus</a>
+								      	<a href="#bus" aria-controls="bus" role="tab" data-toggle="tab">Find me a ticket</a>
 								      </li>
 								   </ul>
 								   <!-- Tab panes -->
@@ -120,7 +120,7 @@
 												<div class="input-field">
 													<label for="from">From:</label>
 													<!-- <input type="text" class="form-control" id="from-place" placeholder="Dhaka, Bangladesh"/> -->
-													<select required class="form-control" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
+													<select required class="cs-select cs-skin-border" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
 														@foreach($allRoutes as $item)
 														<option onkeyup="saveValue(this);" style="font-weight: bold; color:#f49048;" value="{{ $item->route_name }}">{{ $item->route_name }} </option>
 														@endforeach
@@ -131,7 +131,7 @@
 												<div class="input-field">
 													<label for="from">To:</label>
 													<!-- <input type="text" class="form-control" id="to-place" placeholder="Khulna, Bangladesh"/> -->
-													<select required class="form-control" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
+													<select required class="cs-select cs-skin-border" style="font-weight: bold; color:#f49048;" name="Customer_Start_RouteName" id="from-place" placeholder="select" >
 														@foreach($allRoutes as $item)
 														<option onkeyup="saveValue(this);" style="font-weight: bold; color:#f49048;" value="{{ $item->route_name }}">{{ $item->route_name }} </option>
 														@endforeach
@@ -158,7 +158,7 @@
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
 													<label for="class">Seat:</label>
-													<input name="Ticket_Price" type="number" class="form-control rounded-0" placeholder="BDT" value="1" required min="1" max="39" step="1" pattern="\d*">
+													<input name="customer_seats" type="number" class="form-control rounded-0" style="font-weight: bold; color:#f49048; background-color:#f0edeb;" placeholder="Seat/Person" value="1" required min="1" max="39" step="1" pattern="\d*">
 													</select>
 												</section>
 											</div>

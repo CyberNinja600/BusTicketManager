@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminAddHighlight;
 use App\Models\AllRoutes;
+use App\Models\Brand_Ticket_Published;
 class CustomerController extends Controller
 {
     /**
@@ -26,6 +27,7 @@ class CustomerController extends Controller
     {   
         $allRoutes = AllRoutes::all();
         $allHighlights = AdminAddHighlight::all();
-        return view('customer',compact('allRoutes', 'allHighlights'));
+        $allBrandTicket = Brand_Ticket_Published::all(); 
+        return view('customer',compact('allRoutes', 'allHighlights', 'allBrandTicket'));
     }
 }
