@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Brand_Ticket_Published;
 
 class BrandTicketPublishedController extends Controller
 {
     public function BrandAddTicketSubmit(Request $req)
     {
-        print_r($req->input());
+        // print_r($req->input());
+
+        $author_id = Auth::user()->id;
         $data = new Brand_Ticket_Published;
         $data -> brand_ticket_from = $req->input("Start_RouteName");
         $data -> brand_ticket_to = $req->input("Destination_RouteName");
