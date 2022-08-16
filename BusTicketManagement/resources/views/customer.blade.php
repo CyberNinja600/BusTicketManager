@@ -19,14 +19,6 @@
   <!-- 
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
 	//////////////////////////////////////////////////////
 	 -->
 
@@ -144,17 +136,6 @@
 													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
 												</div>
 											</div> -->
-											<!-- <div class="col-sm-12 mt">
-												<section>
-													<label for="class">Class:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>Economy</option>
-														<option value="economy">Economy</option>
-														<option value="first">First</option>
-														<option value="business">Business</option>
-													</select>
-												</section>
-											</div> -->
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
 													<label for="class">Seat:</label>
@@ -174,6 +155,7 @@
 													</select>
 												</section>
 											</div> -->
+											
 											<div class="col-xs-12">
 												<input type="submit" class="btn btn-primary btn-block" value="Search Flight">
 											</div>
@@ -198,8 +180,7 @@
 				</div>
 			</div>
 		</div>
-	
-
+		
 		<div id="fh5co-features">
 			<div class="container">
 				<div class="row">
@@ -211,7 +192,7 @@
 							</span>
 							<div class="feature-copy">
 								<h3>Family Travel</h3>
-								<p>What’s more, travelling responsibly teaches the importance of protecting the environment.</p>
+								<p>What's more, travelling responsibly teaches the importance of protecting the environment.</p>
 								<p><a target = _blank href="https://www.trafalgar.com/real-word/benefits-of-travelling-with-family/">Learn More</a></p>
 							</div>
 						</div>
@@ -225,7 +206,7 @@
 							</span>
 							<div class="feature-copy">
 								<h3>Travel Plans</h3>
-								<p>Pick your destination. There’s nothing to say when a traveler’s mind wishes to visit the beaches, mountains, or a forest.</p>
+								<p>Pick your destination. There's nothing to say when a traveler's mind wishes to visit the beaches, mountains, or a forest.</p>
 								<p><a  target = _blank href="https://traveltriangle.com/blog/how-to-plan-a-trip/">Learn More</a></p>
 							</div>
 						</div>
@@ -296,28 +277,53 @@
 							<li class="one-forth text-center" style="background-image: url(images/place-1.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Los Angeles</h2> <!-- insert from Most Popular -->
+										<h2>
+											@empty($allHighlights[0]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[0]->highlight_name}}
+											@endempty
+										</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-2.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Hongkong</h2> <!-- insert from Most Popular -->
+										<h2>
+										    @empty($allHighlights[1]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[1]->highlight_name}}
+											@endempty
+										</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-3.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Italy</h2> <!-- insert from Most Popular -->
+										<h2>
+											@empty($allHighlights[2]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[2]->highlight_name}}
+											@endempty
+											
+										</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-4.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Philippines</h2> <!-- insert from Most Popular -->
+										<h2> 
+											@empty($allHighlights[3]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[3]->highlight_name}}
+											@endempty
+										</h2> <!-- insert from Most Popular -->
 									</div> 
 								</a>
 							</li>
@@ -325,7 +331,13 @@
 							<li class="one-forth text-center" style="background-image: url(images/place-5.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Japan</h2> <!-- insert from Most Popular -->
+										<h2>
+											@empty($allHighlights[4]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[4]->highlight_name}}
+											@endempty
+										</h2> <!-- insert from Most Popular -->
 									</div>
 								</a>
 							</li>
@@ -340,35 +352,65 @@
 							<li class="one-forth text-center" style="background-image: url(images/place-6.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Paris</h2>
+										<h2>
+											@empty($allHighlights[5]->highlight_name)
+											Tick-It
+											@else
+												{{$allHighlights[5]->highlight_name}}
+											@endempty
+										</h2>
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-7.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Singapore</h2>
+										<h2>
+											@empty($allHighlights[6]->highlight_name)
+											Tick-It
+											@else
+												{{$allHighlights[6]->highlight_name}}
+											@endempty
+										</h2>
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-8.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Madagascar</h2>
+										<h2>
+											@empty($allHighlights[7]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[7]->highlight_name}}
+											@endempty
+										</h2>
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-9.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Egypt</h2>
+										<h2>
+										@empty($allHighlights[8]->highlight_name)
+												Tick-It
+											@else
+												{{$allHighlights[8]->highlight_name}}
+											@endempty
+										</h2>
 									</div>
 								</a>
 							</li>
 							<li class="one-forth text-center" style="background-image: url(images/place-10.jpg); ">
 								<a href="#">
 									<div class="case-studies-summary">
-										<h2>Indonesia</h2>
+										<h2>
+										@empty($allHighlights[9]->highlight_name)
+												Tick-IT
+											@else
+												{{$allHighlights[9]->highlight_name}}
+											@endempty
+										</h2>
 									</div>
 								</a>
 							</li>
@@ -382,7 +424,7 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Trick-it The Key To Your Heart.</h2>
+					<h2>Tick-it, The ride of you life.</h2>
 				</div>
 			</div>
 			<!-- <div class="row">

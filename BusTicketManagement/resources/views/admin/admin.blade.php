@@ -410,7 +410,7 @@
           <div class="card">
             <div class="card-body">
               <div class="card-title">
-                <H4>Available Routes</H4>
+                <H4>All Highlights</H4>
               </div>
               <hr>
               <table>
