@@ -31,7 +31,10 @@ Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'
 
 Route::POST('AdminRouteAddSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteAddSubmit');
 Route::POST('AdminRouteDeleteSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteDeleteSubmit');
+
 Route::POST('AdminRegisterSubmit','App\Http\Controllers\AdminRegisterController@AdminRegisterSubmit');
+Route::POST('AdminRegisterDeleteSubmit','App\Http\Controllers\AdminRegisterController@AdminRegisterDeleteSubmit');
+
 
 Route::POST('AdminAddHighlightSubmit','App\Http\Controllers\AdminAddHighlightController@AdminAddHighlightSubmit');
 Route::POST('AdminAddHighlightDeleteSubmit','App\Http\Controllers\AdminAddHighlightController@AdminAddHighlightDeleteSubmit');

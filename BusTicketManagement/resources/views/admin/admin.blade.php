@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -12,25 +11,25 @@
   <meta name="author" content="" />
   <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
   <!-- loader-->
-  <link href="public/assets/css/pace.min.css" rel="stylesheet" />
-  <script src="piblic/assets/js/pace.min.js"></script>
+  <link href="assets/css/pace.min.css" rel="stylesheet" />
+  <!-- <script src="assets/js/pace.min.js"></script> -->
+
   <!--favicon-->
-  <link rel="icon" href="public/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <!-- Vector CSS -->
-  <link href="public/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
   <!-- simplebar CSS-->
-  <link href="public/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
   <!-- Bootstrap core CSS-->
-  <link href="public/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <!-- animate CSS-->
-  <link href="public/assets/css/animate.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
   <!-- Icons CSS-->
-  <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
   <!-- Sidebar CSS-->
   <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
   <!-- Custom Style-->
   <link href="assets/css/app-style.css" rel="stylesheet" />
-
 </head>
 
 <body class="bg-theme bg-theme2">
@@ -242,14 +241,23 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="card-title">
+                    @empty(session()->get('worked'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('worked')}} </i>
+                      </div>
+                      @endempty
                       <H4>Register New Account</H4>
                     </div>
                     <hr>
                     <div class="form-group">
                       <label for="input-6">Name</label> 
-                      <form class="card-body">
-                        <i style="color:Red">{{session()->get('errorname')}} </i>
-                      </form>
+                      @empty(session()->get('errorname'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('errorname')}} </i>
+                      </div>
+                      @endempty
                       <input type="name" name="name" required class="form-control form-control-rounded @error('name') is-invalid @enderror" id="input-6" placeholder="Enter Your Name">
                     </div>
                     <hr>
@@ -265,20 +273,26 @@
                     </div>
                     <hr>
                     <div class="form-group">
+                    @empty(session()->get('errornotlong'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('errornotlong')}} </i>
+                      </div>
+                      @endempty
                       <label for="input-9">Password</label>
-                      <form class="card-body">
-                        <i style="color:Red">{{session()->get('errorname')}} </i>
-                      </form>
                       <input type="password" name='password' required class="form-control form-control-rounded @error('password') is-invalid @enderror" id="input-9" placeholder="Enter Password">
                     </div>
 
                     <hr>
                     <div class="form-group">
                       <label for="input-10">Confirm Password</label>
-                      <form class="card-body">
-                        <i style="color:Red">{{session()->get('errorname')}} </i>
-                      </form>
-                      <input type="password" name='passwordConf' required class="form-control form-control-rounded @error('password') is-invalid @enderror" id="input-9" placeholder="Enter Password">
+                      @empty(session()->get('errorpasswordmatch'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('errorpasswordmatch')}} </i>
+                      </div>
+                      @endempty
+                      <input type="password" name='password_conf' required class="form-control form-control-rounded @error('password') is-invalid @enderror" id="input-9" placeholder="Enter Password">
                     </div>
                     <hr>
                     <div class="form-group">
@@ -299,24 +313,32 @@
               <!--Register1-->
               <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
               <!---DeleteExistingUser-->
-              <form>
+              <form action="AdminRegisterDeleteSubmit" method="POST">
+                @csrf
                 <div class="card-body">
                   <div class="card-title">
                     <H4>Delete Existing Account</H4>
                   </div>
                   <hr>
-
+                  @empty(session()->get('deletedW'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('deletedW')}} </i>
+                      </div>
+                      @endempty
                   <div class="form-group">
                     <label for="input-6">User-Type</label>
-                    <select required class="form-control form-control-rounded" name="roleType" id="roleTypeId" placeholder="select">
-                      <option onkeyup="saveValue(this);" value="Admin">Name</option>
+                    <select required class="form-control form-control-rounded" name="name" id="input-6" placeholder="select">
+                          <option> Select </option>
+                          @foreach($alluser as $item)
+                          <option value="{{ $item->name }}"> {{ $item->name }} </option>
+                          @endforeach
                     </select>
                   </div>
                   <hr>
                   <div class="form-group">
                     <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i>Exterminate</button>
                   </div>
-
                 </div>
               </form>
             </div>
