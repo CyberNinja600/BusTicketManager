@@ -54,13 +54,13 @@
           </a>
         </li>
         <li>
-          <a href="#form">
-            <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
+          <a href="#register">
+            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
           </a>
         </li>
         <li>
-          <a href="forms.html">
-            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
+          <a href="#form">
+            <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
           </a>
         </li>
         <li>
@@ -231,11 +231,11 @@
         <!--End Dashboard Content-->
 
         <!----------creator studio---------------->
-        <div id="form">
+        <div id="register">
           <div class="row mt-3">
 
             <!-- register table--->
-            <div class="col-lg-6">
+            <div class="col-lg-6" >
               <form action="AdminRegisterSubmit" method="POST">
                 @csrf
                 <div class="card">
