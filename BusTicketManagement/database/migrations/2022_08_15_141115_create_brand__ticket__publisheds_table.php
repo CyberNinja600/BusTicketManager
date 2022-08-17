@@ -21,6 +21,7 @@ return new class extends Migration
             $table->dateTime("brand_ticket_date");
             $table->integer("brand_ticket_price");
             $table->integer("brand_ticket_author_id");
+            $table->string("brand_ticket_author_name");
             $table->timestamps();
         });
     }
