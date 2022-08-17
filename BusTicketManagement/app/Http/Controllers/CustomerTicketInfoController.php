@@ -23,9 +23,10 @@ class CustomerTicketInfoController extends Controller
         // print_r($seatcus);
 
 
-        $allSearchedAvailableTicket = Brand_Ticket_Published::where('brand_ticket_date', '>', Carbon::now())->where('brand_ticket_seat', '>=', $seatcus)->where('brand_ticket_from', '=', $fromcus)->where('brand_ticket_to', '=', $tocus)->get();
+        $allSearchedAvailableTicket = Brand_Ticket_Published::where('brand_ticket_date', '>', Carbon::now())->where('brand_ticket_seat', '>=', $seatcus)->Where('brand_ticket_from', '=', $fromcus)->Where('brand_ticket_to', '=', $tocus)->get();
 
-        //print($allSearchedAvailableTicket);
+        #rint($allSearchedAvailableTicket);
+
         // $author_id = Auth::user()->id;
         // $data = new Brand_Ticket_Published;
         // $data->brand_ticket_author_id = $author_id;
@@ -36,15 +37,18 @@ class CustomerTicketInfoController extends Controller
         // $data -> brand_ticket_price = $req->input("Ticket_Price");
         // $data -> save();
         // return redirect()->back();
+
+
         $allRoutes = AllRoutes::all();
         $allBrandTicket = Brand_Ticket_Published::all();
         $allHighlights = AdminAddHighlight::all();
         $allavailableTicket = Brand_Ticket_Published::where('brand_ticket_date', '>', Carbon::now())->where('brand_ticket_seat', '>', 0)->get();
 
-
-        #return view('/customer', compact('allRoutes', 'allHighlights', 'allavailableTicket', 'allBrandTicket', 'allSearchedAvailableTicket'));
-        return redirect()->route('customer')->with( ['allRoutes' => $allRoutes,'allHighlights' => $allHighlights,'allavailableTicket' => $allavailableTicket,'allBrandTicket' => $allBrandTicket,'allSearchedAvailableTicket' => $allSearchedAvailableTicket] );
         
+
+        return view('customer', compact('allRoutes', 'allHighlights', 'allavailableTicket', 'allBrandTicket', 'allSearchedAvailableTicket'));
+        return redirect()->back();
+
 
     }
 }

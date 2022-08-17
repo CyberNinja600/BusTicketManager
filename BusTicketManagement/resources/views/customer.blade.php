@@ -192,6 +192,22 @@
 									<th>Confirm</th>
 								</tr>
 								<tbody>
+									@if(isset($allSearchedAvailableTicket))
+										@foreach($allSearchedAvailableTicket as $item)
+											<form class="form-control">
+											<tr>
+											<td> {{ $item->brand_ticket_from}} </td>
+											<td> {{ $item->brand_ticket_to}} </td>
+											<td> {{ $item->brand_ticket_date}} </td>
+											<td> {{ $item->brand_ticket_seat}} </td>
+											<td> {{ $item->brand_ticket_price}} </td>
+											<td> {{ $item->brand_ticket_author_name}} </td>
+											<td> Confirm </td>
+											</tr>
+											</form>
+										@endforeach
+
+									@else
                                         @foreach($allavailableTicket as $item)
 										<form class="form-control">
                                         <tr>
@@ -205,6 +221,8 @@
                                         </tr>
 										</form>
                                         @endforeach
+
+									@endif
 								</tbody>
 							</table>
 						</form>
