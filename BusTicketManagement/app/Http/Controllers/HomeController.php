@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,17 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view('home');
+        if(!Auth::check()) {
+        $userType='guest';
+        }
+
+        else{
+            $userType = Auth::user()->role;
+        }
+
+        if($userType==Null){
+            $userType='guest';
+        }
+        return view('home',compact('userType'));
     }
 }

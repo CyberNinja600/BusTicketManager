@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\AllRoutes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Brand_Ticket_Published;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Redirect;
 
 class BrandController extends Controller
 {
@@ -33,6 +34,13 @@ class BrandController extends Controller
 
         $brandSpecifiedExpiredTicketDate = Brand_Ticket_Published::where('brand_ticket_author_id', $author_id)->where('brand_ticket_date','<',Carbon::now())->get();
         $brandSpecifiedExpiredTicketSeat = Brand_Ticket_Published::where('brand_ticket_author_id', $author_id)->where('brand_ticket_seat','=',0)->get();
-        return view('brand\brand',compact('allRoutes','brandSpecifiedTicket','brandSpecifiedExpiredTicketDate','brandSpecifiedExpiredTicketSeat'));
+
+        $userType = Auth::user()->role;
+        if($userType=='Brand' || $userType == 'Admin'){
+            return view('brand\brand',compact('allRoutes','brandSpecifiedTicket','brandSpecifiedExpiredTicketDate','brandSpecifiedExpiredTicketSeat'));
+        }
+        else{
+            return Redirect::back();
+        }
     }
 }

@@ -54,7 +54,7 @@
           </a>
         </li>
         <li>
-          <a href="#register">
+          <a href="#registergit ">
             <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
           </a>
         </li>

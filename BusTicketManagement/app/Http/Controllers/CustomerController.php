@@ -6,7 +6,10 @@ use Carbon\Carbon;
 use App\Models\AllRoutes;
 use Illuminate\Http\Request;
 use App\Models\AdminAddHighlight;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Brand_Ticket_Published;
+use Illuminate\Support\Facades\Redirect;
+
 class CustomerController extends Controller
 {
     /**
@@ -30,6 +33,15 @@ class CustomerController extends Controller
         $allBrandTicket = Brand_Ticket_Published::all();
         $allHighlights = AdminAddHighlight::all();
         $allavailableTicket = Brand_Ticket_Published::where('brand_ticket_date','>',Carbon::now())->where('brand_ticket_seat','>',0)->get();
-        return view('customer',compact('allRoutes','allHighlights','allBrandTicket','allavailableTicket'));
+
+
+        $userType = Auth::user()->role;
+        if($userType=='Customer' || $userType == 'Admin'){
+            return view('customer', compact('allRoutes', 'allHighlights', 'allavailableTicket', 'allBrandTicket'));
+        }
+        else{
+            return Redirect::back();
+        }
+
     }
 }
