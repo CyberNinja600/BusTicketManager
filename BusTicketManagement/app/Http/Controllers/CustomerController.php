@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\AllRoutes;
 use Illuminate\Http\Request;
-
+use App\Models\AdminAddHighlight;
+use App\Models\Brand_Ticket_Published;
 class CustomerController extends Controller
 {
     /**
@@ -22,7 +25,11 @@ class CustomerController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('customer');
+    {   
+        $allRoutes = AllRoutes::all();
+        $allBrandTicket = Brand_Ticket_Published::all();
+        $allHighlights = AdminAddHighlight::all();
+        $allavailableTicket = Brand_Ticket_Published::where('brand_ticket_date','>',Carbon::now())->where('brand_ticket_seat','>',0)->get();
+        return view('customer',compact('allRoutes','allHighlights','allBrandTicket','allavailableTicket'));
     }
 }

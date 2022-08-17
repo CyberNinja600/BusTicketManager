@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use App\Models\AllRoutes;
 use Illuminate\Http\Request;
 use App\Models\AdminAddHighlight;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -24,9 +26,11 @@ class AdminController extends Controller
      */
     public function index()
     {   
+        $notyou=Auth::user()->id;
         $allRoutes = AllRoutes::all();
         $allHighlights = AdminAddHighlight::all();
-        return view('admin\admin', compact('allRoutes', 'allHighlights'));
+        $alluser = User::where('id','!=',$notyou)->get();
+        return view('admin\admin', compact('allRoutes', 'allHighlights', 'alluser'));
     }
 
 }
