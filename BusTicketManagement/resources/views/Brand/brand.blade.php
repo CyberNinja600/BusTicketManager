@@ -43,9 +43,9 @@
             <div class="brand-logo">
 
                 <h3>
-                <a style="color:#FFFAF0">
-                    <i>GreenLine</i>
-                </a>
+                    <a style="color:#FFFAF0">
+                        <i>GreenLine</i>
+                    </a>
                 </h3>
             </div>
             <ul class="sidebar-menu do-nicescrol">
@@ -231,7 +231,96 @@
                 </div>
                 <!--End Row-->
                 <!--End Dashboard Content-->
+                <!--show all ticket-->
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header"> <h4>All Available Tickets </h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket-ID</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Departure</th>
+                                            <th>Available Seats</th>
+                                            <th>Price</th>
+                                            <th>Created At</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
+                                        @foreach($brandSpecifiedTicket as $item)
+                                        <tr>
+                                        <td> {{ $item->id}} </td>
+                                        <td> {{ $item->brand_ticket_from}} </td>
+                                        <td> {{ $item->brand_ticket_to}} </td>
+                                        <td> {{ $item->brand_ticket_date}} </td>
+                                        <td> {{ $item->brand_ticket_seat}} </td>
+                                        <td> {{ $item->brand_ticket_price}} </td>
+                                        <td> {{ $item->created_at   }} </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--show all ticket ends==-->
+                <!--show all expired ticket-->
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header"> <h4>Expired Tickets</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket-ID</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Departure</th>
+                                            <th>Available Seats</th>
+                                            <th>Price</th>
+                                            <th>Created At</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach($brandSpecifiedExpiredTicketDate as $item)
+                                        <td> {{ $item->id}} </td>
+                                        <td> {{ $item->brand_ticket_from}} </td>
+                                        <td> {{ $item->brand_ticket_to}} </td>
+                                        <td> {{ $item->brand_ticket_date}} </td>
+                                        <td> {{ $item->brand_ticket_seat}} </td>
+                                        <td> {{ $item->brand_ticket_price}} </td>
+                                        <td> {{ $item->created_at   }} </td>
+                                        </tr>
+                                        @endforeach
+
+                                        @foreach($brandSpecifiedExpiredTicketSeat as $item)
+                                        <td> {{ $item->id}} </td>
+                                        <td> {{ $item->brand_ticket_from}} </td>
+                                        <td> {{ $item->brand_ticket_to}} </td>
+                                        <td> {{ $item->brand_ticket_date}} </td>
+                                        <td> {{ $item->brand_ticket_seat}} </td>
+                                        <td> {{ $item->brand_ticket_price}} </td>
+                                        <td> {{ $item->created_at   }} </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--show all expired ticket ends==-->
                 <!-- start ticket form--->
                 <form action="BrandAddTicketSubmit" method="POST">
                     @csrf
@@ -298,6 +387,32 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i>Submit-Ticket</button>
                             </div>
+                        </div>
+                    </div>
+                </form>
+                <!--delete ticket-->
+                <form action="BrandDeleteTicketSubmit" method="POST">
+                    @csrf
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <H4>Remove Ticket</H4>
+                            </div>
+                            <hr>
+
+                            <div class="form-group">
+                                <label for="input-6">Remove</label>
+                                <select required class="form-control form-control-rounded" name="ticket_delete" id="input-6" placeholder="select">>
+                                    @foreach($brandSpecifiedTicket as $item)
+                                    <option onkeyup="saveValue(this);" value="{{ $item->id }}"> {{ $item->id}} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i> Remove</button>
+                            </div>
+
                         </div>
                     </div>
                 </form>

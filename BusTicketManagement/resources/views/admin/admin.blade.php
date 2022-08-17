@@ -237,7 +237,8 @@
 
             <!-- register table--->
             <div class="col-lg-6">
-              <form>
+              <form action="AdminRegisterSubmit" method="POST">
+                @csrf
                 <div class="card">
                   <div class="card-body">
                     <div class="card-title">
@@ -245,36 +246,50 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label for="input-6">Name</label>
-                      <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Enter Your Name">
+                      <label for="input-6">Name</label> 
+                      <form class="card-body">
+                        <i style="color:Red">{{session()->get('errorname')}} </i>
+                      </form>
+                      <input type="name" name="name" required class="form-control form-control-rounded @error('name') is-invalid @enderror" id="input-6" placeholder="Enter Your Name">
                     </div>
                     <hr>
                     <div class="form-group">
                       <label for="input-7">Email</label>
-                      <input type="text" class="form-control form-control-rounded" id="input-7" placeholder="Enter Your Email Address">
+                      @empty(session()->get('erroremail'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('erroremail')}} </i>
+                      </div>
+                      @endempty
+                      <input type="email" required name="email"class="form-control form-control-rounded" id="email" placeholder="Enter Your Email Address">
                     </div>
                     <hr>
+                    <div class="form-group">
+                      <label for="input-9">Password</label>
+                      <form class="card-body">
+                        <i style="color:Red">{{session()->get('errorname')}} </i>
+                      </form>
+                      <input type="password" name='password' required class="form-control form-control-rounded @error('password') is-invalid @enderror" id="input-9" placeholder="Enter Password">
+                    </div>
 
+                    <hr>
+                    <div class="form-group">
+                      <label for="input-10">Confirm Password</label>
+                      <form class="card-body">
+                        <i style="color:Red">{{session()->get('errorname')}} </i>
+                      </form>
+                      <input type="password" name='passwordConf' required class="form-control form-control-rounded @error('password') is-invalid @enderror" id="input-9" placeholder="Enter Password">
+                    </div>
+                    <hr>
                     <div class="form-group">
                       <label for="input-6">User-Type</label>
-                      <select required class="form-control form-control-rounded" name="roleType" id="roleTypeId" placeholder="select">
+                      <select required type='role' class="form-control form-control-rounded" name="role" id="role" required placeholder="select">
                         <option onkeyup="saveValue(this);" value="Admin">Admin</option>
                         <option onkeyup="saveValue(this);" value="Customer">Customer</option>
                         <option onkeyup="saveValue(this);" value="Brand">Brand</option>
                       </select>
                     </div>
 
-                    <hr>
-                    <div class="form-group">
-                      <label for="input-9">Password</label>
-                      <input type="text" class="form-control form-control-rounded" id="input-9" placeholder="Enter Password">
-                    </div>
-
-                    <hr>
-                    <div class="form-group">
-                      <label for="input-10">Confirm Password</label>
-                      <input type="text" class="form-control form-control-rounded" id="input-10" placeholder="Confirm Password">
-                    </div>
                     <hr>
                     <div class="form-group">
                       <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i> Register</button>

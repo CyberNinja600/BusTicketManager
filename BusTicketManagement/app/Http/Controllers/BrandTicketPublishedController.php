@@ -26,4 +26,15 @@ class BrandTicketPublishedController extends Controller
         $data -> save();
         return redirect()->back();
     }
+    public function BrandDeleteTicketSubmit(request $req)
+    {
+        //print_r($req->input());
+        // $data = AllRoutes::find($req->input("RouteName"));
+        // $data -> delete();
+        // return redirect()->back();
+
+        DB::delete('delete from brand__ticket__publisheds where id = ?',[$req->input("ticket_delete")]);
+        return redirect()->back();
+
+    }
 }

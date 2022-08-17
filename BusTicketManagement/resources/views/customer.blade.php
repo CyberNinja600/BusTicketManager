@@ -174,14 +174,14 @@
 					<div class="card">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+								<p></p>
 								<h3>Tickets</h3>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 
 							</div>
 						</div>
 						<form class="card">
-							<table>
-
+							<table class="table align-items-center table-flush table-borderless">
 								<tr>
 									<th>From</th>
 									<th>To</th>
@@ -191,18 +191,19 @@
 									<th>Brand Name</th>
 									<th>Confirm</th>
 								</tr>
-								<div class="card">
-									<tr>
-										<td>Dhaka</td>
-										<td>Khulna</td>
-										<td>12 auguest 2022 08:12 pm </td>
-										<td>40</td>
-										<td>200</td>
-										<td>GreenLine</td>
-										<td>Button</td>
-									</tr>
-								</div>
-
+								<tbody>
+                                        @foreach($allavailableTicket as $item)
+                                        <tr>
+                                        <td> {{ $item->brand_ticket_from}} </td>
+                                        <td> {{ $item->brand_ticket_to}} </td>
+                                        <td> {{ $item->brand_ticket_date}} </td>
+                                        <td> {{ $item->brand_ticket_seat}} </td>
+                                        <td> {{ $item->brand_ticket_price}} </td>
+										<td> {{ $item->brand_ticket_author_id}} </td>
+                                        <td> Confirm </td>
+                                        </tr>
+                                        @endforeach
+								</tbody>
 							</table>
 						</form>
 					</div>

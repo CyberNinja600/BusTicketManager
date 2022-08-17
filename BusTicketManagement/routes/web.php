@@ -24,18 +24,21 @@ Route::get("/", [App\Http\Controllers\IndexController::class, "index"]);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/brand', [App\Http\Controllers\BrandController::class, 'index'])->name('brand');
+Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
 #Route::POST('AdminRouteAddSubmit',[App\Http\Controllers\AdminAddRouteController::class,'addRouteAdmin']);
 
 Route::POST('AdminRouteAddSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteAddSubmit');
 Route::POST('AdminRouteDeleteSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteDeleteSubmit');
+Route::POST('AdminRegisterSubmit','App\Http\Controllers\AdminRegisterController@AdminRegisterSubmit');
 
 Route::POST('AdminAddHighlightSubmit','App\Http\Controllers\AdminAddHighlightController@AdminAddHighlightSubmit');
 Route::POST('AdminAddHighlightDeleteSubmit','App\Http\Controllers\AdminAddHighlightController@AdminAddHighlightDeleteSubmit');
 
 
 Route::POST('BrandAddTicketSubmit','App\Http\Controllers\BrandTicketPublishedController@BrandAddTicketSubmit');
+Route::POST('BrandDeleteTicketSubmit','App\Http\Controllers\BrandTicketPublishedController@BrandDeleteTicketSubmit');
+
 
 Route::POST('CustomerAddTicketSubmit','App\Http\Controllers\CustomerTicketInfoController@CustomerAddTicketSubmit');

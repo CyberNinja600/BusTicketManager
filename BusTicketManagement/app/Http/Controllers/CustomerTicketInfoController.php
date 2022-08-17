@@ -11,6 +11,7 @@ class CustomerTicketInfoController extends Controller
     {
         print_r($req->input());
 
+        
         // $author_id = Auth::user()->id;
         // $data = new Brand_Ticket_Published;
         // $data->brand_ticket_author_id = $author_id;
