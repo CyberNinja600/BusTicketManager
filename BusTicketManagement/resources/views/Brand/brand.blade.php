@@ -134,20 +134,20 @@
                         <div class="row row-group m-0">
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
                                 <div class="card-body">
-                                    <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
+                                    <h5 class="text-white mb-0">{{$numberofticket}}<span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
                                     <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
+                                        <div class="progress-bar" style="width:100%"></div>
                                     </div>
-                                    <p class="mb-0 text-white small-font">Total Orders <span class="float-right">+4.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                                    <p class="mb-0 text-white small-font">Total Orders <span class="float-right"> <i class="zmdi zmdi-long-arrow-up"></i></span></p>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
                                 <div class="card-body">
-                                    <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
+                                    <h5 class="text-white mb-0">{{$totalrevenue}}৳<span class="float-right"><i class="fa fa-TAKA"></i></span></h5>
                                     <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
+                                        <div class="progress-bar" style="width:100%"></div>
                                     </div>
-                                    <p class="mb-0 text-white small-font">Total Revenue <span class="float-right">+1.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                                    <p class="mb-0 text-white small-font">Total Revenue <span class="float-right"> <i class="zmdi zmdi-long-arrow-up"></i></span></p>
                                 </div>
                             </div>
                         </div>
@@ -164,55 +164,32 @@
                                 <table class="table align-items-center table-flush table-borderless">
                                     <thead>
                                         <tr>
-                                            <th>Product</th>
-                                            <th>Product ID</th>
-                                            <th>Amount</th>
-                                            <th>Date</th>
+                                            <th>Customer Name</th>
+                                            <th>Customer ID</th>
+                                            <th>Brand</th>
+                                            <th>Ticket ID</th>
+                                            <th>Ticket Bought</th>
+                                            <th>Departure Date</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Paid
+                                            <th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($allticket as $item)
                                         <tr>
-                                            <td>Iphone 5</td>
-                                            <td>#9405822</td>
-                                            <td>$ 1250.00</td>
-                                            <td>03 Aug 2017</td>
+                                            <td>{{ $item->customer_name }}</td>
+                                            <td>{{ $item->customer_id }}</td>
+                                            <td>{{ $item->ticketbrand }}</td>
+                                            <td>{{ $item->ticketid }}</td>
+                                            <td>{{ $item->created_at}}</td>
+                                            <td>{{ $item->date }}</td>
+                                            <td>{{ $item->from }}</td>
+                                            <td>{{ $item->to }}</td>
+                                            <td>{{ $item->totalprice}}৳</td>
                                         </tr>
-
-                                        <tr>
-                                            <td>Earphone GL</td>
-                                            <td>#9405820</td>
-                                            <td>$ 1500.00</td>
-                                            <td>03 Aug 2017</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>HD Hand Camera</td>
-                                            <td>#9405830</td>
-                                            <td>$ 1400.00</td>
-                                            <td>03 Aug 2017</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Clasic Shoes</td>
-                                            <td>#9405825</td>
-                                            <td>$ 1200.00</td>
-                                            <td>03 Aug 2017</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Hand Watch</td>
-                                            <td>#9405840</td>
-                                            <td>$ 1800.00</td>
-                                            <td>03 Aug 2017</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Clasic Shoes</td>
-                                            <td>#9405825</td>
-                                            <td>$ 1200.00</td>
-                                            <td>03 Aug 2017</td>
-                                        </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -225,7 +202,8 @@
                 <div class="row">
                     <div class="col-12 col-lg-12">
                         <div class="card">
-                            <div class="card-header"> <h4>All Available Tickets </h4>
+                            <div class="card-header">
+                                <h4>All Available Tickets </h4>
                             </div>
                             <div class="table-responsive">
                                 <table class="table align-items-center table-flush table-borderless">
@@ -244,13 +222,13 @@
 
                                         @foreach($brandSpecifiedTicket as $item)
                                         <tr>
-                                        <td> {{ $item->id}} </td>
-                                        <td> {{ $item->brand_ticket_from}} </td>
-                                        <td> {{ $item->brand_ticket_to}} </td>
-                                        <td> {{ $item->brand_ticket_date}} </td>
-                                        <td> {{ $item->brand_ticket_seat}} </td>
-                                        <td> {{ $item->brand_ticket_price}} </td>
-                                        <td> {{ $item->created_at   }} </td>
+                                            <td> {{ $item->id}} </td>
+                                            <td> {{ $item->brand_ticket_from}} </td>
+                                            <td> {{ $item->brand_ticket_to}} </td>
+                                            <td> {{ $item->brand_ticket_date}} </td>
+                                            <td> {{ $item->brand_ticket_seat}} </td>
+                                            <td> {{ $item->brand_ticket_price}} </td>
+                                            <td> {{ $item->created_at   }} </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -265,7 +243,8 @@
                 <div class="row">
                     <div class="col-12 col-lg-12">
                         <div class="card">
-                            <div class="card-header"> <h4>Expired Tickets</h4>
+                            <div class="card-header">
+                                <h4>Expired Tickets</h4>
                             </div>
                             <div class="table-responsive">
                                 <table class="table align-items-center table-flush table-borderless">
@@ -293,16 +272,6 @@
                                         </tr>
                                         @endforeach
 
-                                        @foreach($brandSpecifiedExpiredTicketSeat as $item)
-                                        <td> {{ $item->id}} </td>
-                                        <td> {{ $item->brand_ticket_from}} </td>
-                                        <td> {{ $item->brand_ticket_to}} </td>
-                                        <td> {{ $item->brand_ticket_date}} </td>
-                                        <td> {{ $item->brand_ticket_seat}} </td>
-                                        <td> {{ $item->brand_ticket_price}} </td>
-                                        <td> {{ $item->created_at   }} </td>
-                                        </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

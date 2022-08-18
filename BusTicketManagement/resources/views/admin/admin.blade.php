@@ -54,7 +54,7 @@
           </a>
         </li>
         <li>
-          <a href="#registergit ">
+          <a href="#register ">
             <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
           </a>
         </li>
@@ -63,8 +63,23 @@
             <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
           </a>
         </li>
+        <hr>
+        <div class="card-body">
+          <li>
+            <a href="/customer">
+              <i class="zmdi zmdi zmdi-male-female"></i> <span>View As Client</span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/brand">
+              <i class="zmdi zmdi-bus"></i> <span>View As Brand</span>
+            </a>
+          </li>
+      </div>
+      <hr>
         <li>
-          <a>
+          <a href="/">
             <i class="zamdi zamdi-format-list-bulleted"></i><span>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30%" height="30%" viewBox="0 0 1950 850" preserveAspectRatio="xMinYMin meet">
                 <rect id="svgEditorBackground" x="0" y="0" width="1950" height="850" style="fill: none; stroke: none;" />
@@ -142,20 +157,20 @@
             <div class="row row-group m-0">
               <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$numberofticket}} <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
                   <div class="progress my-3" style="height:3px;">
-                    <div class="progress-bar" style="width:55%"></div>
+                    <div class="progress-bar" style="width:100%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Total Orders <span class="float-right">+4.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                  <p class="mb-0 text-white small-font">Total Orders <span class="float-right"></span></p>
                 </div>
               </div>
               <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$totalrevenue}} <span class="float-right"><i class="fa fa-usd"></i></span></h5>
                   <div class="progress my-3" style="height:3px;">
-                    <div class="progress-bar" style="width:55%"></div>
+                    <div class="progress-bar" style="width:100%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Total Revenue <span class="float-right">+1.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                  <p class="mb-0 text-white small-font">Total Revenue <span class="float-right"></span></p>
                 </div>
               </div>
             </div>
@@ -172,54 +187,32 @@
                 <table class="table align-items-center table-flush table-borderless">
                   <thead>
                     <tr>
-                      <th>Product</th>
-                      <th>Product ID</th>
-                      <th>Amount</th>
-                      <th>Date</th>
+                      <th>Customer Name</th>
+                      <th>Customer ID</th>
+                      <th>Brand</th>
+                      <th>Ticket ID</th>
+                      <th>Ticket Bought</th>
+                      <th>Departure Date</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Paid<th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Iphone 5</td>
-                      <td>#9405822</td>
-                      <td>$ 1250.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
 
-                    <tr>
-                      <td>Earphone GL</td>
-                      <td>#9405820</td>
-                      <td>$ 1500.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>HD Hand Camera</td>
-                      <td>#9405830</td>
-                      <td>$ 1400.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Clasic Shoes</td>
-                      <td>#9405825</td>
-                      <td>$ 1200.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Hand Watch</td>
-                      <td>#9405840</td>
-                      <td>$ 1800.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Clasic Shoes</td>
-                      <td>#9405825</td>
-                      <td>$ 1200.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
+                    @foreach($allticket as $item)
+                      <tr>
+                      <td>{{ $item->customer_name }}</td>
+                      <td>{{ $item->customer_id }}</td> 
+                      <td>{{ $item->ticketbrand }}</td>
+                      <td>{{ $item->ticketid }}</td>
+                      <td>{{ $item->created_at}}</td>
+                      <td>{{ $item->date }}</td>
+                      <td>{{ $item->from }}</td>
+                      <td>{{ $item->to }}</td>
+                      <td>{{ $item->totalprice}}৳</td>
+                      </tr>
+                      @endforeach
 
                   </tbody>
                 </table>
@@ -227,6 +220,73 @@
             </div>
           </div>
         </div>
+        <div class="card">
+        <div class="row">
+          <div class="col-12 col-lg-12">
+            <div class="card">
+              <div class="card-header">New Brand Request
+              </div>
+              <div class="table-responsive">
+                <table class="table align-items-center table-flush table-borderless " style="table-layout:fixed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Brand Name</th>
+                      <th>Brand ID</th>
+                      <th>Message</th>
+                      <th>created</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                  @foreach($allbrandreq as $item)
+                  <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->requestName }}</td> 
+                    <td>{{ $item->requestEmail }}</td>
+                    <td>{{ $item->requestMessage }}</td>
+                    <td>{{ $item->created_at}}</td>
+                    </tr>
+                    @endforeach
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+        <form action="BrandrequestDelete" method="POST">
+                @csrf
+                <div class="card-body">
+                  <div class="card-title">
+                    <H4>Delete Request</H4>
+                  </div>
+                  <hr>
+                  @empty(session()->get('deletedW'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('deletedW')}} </i>
+                      </div>
+                      @endempty
+                  <div class="form-group">
+                    <label for="input-6">User-Type</label>
+                    <select required class="form-control form-control-rounded" name="id" id="input-6" placeholder="select">
+                          <option> Select </option>
+                          @foreach($allbrandreq as $item)
+                          <option value="{{ $item->id }}"> {{ $item->id }} </option>
+                          @endforeach
+                    </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i>Exterminate</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+</div>
         <!--End Row-->
         <!--End Dashboard Content-->
 

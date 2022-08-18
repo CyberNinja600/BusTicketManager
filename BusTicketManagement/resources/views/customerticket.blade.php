@@ -103,7 +103,8 @@
 							<div class="one-4">
 
 								<input name="ticketbrand" value="{{$ticket->brand_ticket_author_name}}" type="hidden">
-								<input name="ticketid" value="{{$ticket->brand_ticket_author_id}}" type="hidden">
+								<input name="ticketbrandid" value="{{$ticket->brand_ticket_author_id}}" type="hidden">
+								<input name="ticketid" value="{{$ticket->id}}" type="hidden">
 								<h3>{{$ticket->brand_ticket_author_name}}</h3>
 								<span><input name="from" value="{{$ticket->brand_ticket_from}}" type="hidden" class="price">From:  {{$ticket->brand_ticket_from}}</span>
                                 <hr>

@@ -34,6 +34,7 @@ Route::get('/brand', [App\Http\Controllers\BrandController::class, 'index'])->na
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
 Route::get('/customerticket', [App\Http\Controllers\CustomerTicketController::class, 'index'])->name('customerticket');
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
+Route::get('/BrandRegister', [App\Http\Controllers\RegisterBrandController::class, 'index'])->name('BrandRegister');
 #Route::POST('AdminRouteAddSubmit',[App\Http\Controllers\AdminAddRouteController::class,'addRouteAdmin']);
 
 Route::POST('AdminRouteAddSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteAddSubmit');
@@ -54,3 +55,6 @@ Route::POST('BrandDeleteTicketSubmit','App\Http\Controllers\BrandTicketPublished
 Route::POST('CustomerAddTicketSubmit','App\Http\Controllers\CustomerTicketInfoController@CustomerAddTicketSubmit');
 Route::POST('CustomerBuyTicketSubmit','App\Http\Controllers\CustomerBuyTicketController@CustomerBuyTicketSubmit');
 Route::POST('CustomerPaymentFinalSubmit','App\Http\Controllers\PaymentConfirmController@CustomerPaymentFinalSubmit');
+
+Route::POST('BrandRequestSubmit','App\Http\Controllers\BrandRequestServController@BrandRequestSubmit');
+Route::POST('BrandrequestDelete','App\Http\Controllers\deleteBrandRequest@BrandrequestDelete');

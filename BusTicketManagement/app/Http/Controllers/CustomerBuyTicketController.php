@@ -20,10 +20,11 @@ class CustomerBuyTicketController extends Controller
         $price=$req->input('price');
         $totalprice=$price*$Cuseat;
         $brandname=$req->input('ticketbrand');
-        $brandid=$req->input('ticketid');
+        $brandid=$req->input('ticketbrandid');
+        $ticketid=$req->input('ticketid');
         $busSeatLeft=$Busseat-$Cuseat;
-        return view('checkout', compact('from','to','Busseat','date','Cuseat','price','totalprice','brandname','brandid','busSeatLeft'));
+        return view('checkout', compact('from','to','Busseat','date','Cuseat','price','totalprice','brandname','brandid','busSeatLeft','ticketid'));
         
-        // print_r($allvalues);
+       //print_r($allvalues);
     }
 }
