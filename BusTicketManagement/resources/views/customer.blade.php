@@ -177,55 +177,8 @@
 								<p></p>
 								<h3>Tickets</h3>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
 							</div>
 						</div>
-						<form class="card">
-							<table class="table align-items-center table-flush table-borderless">
-								<tr>
-									<th>From</th>
-									<th>To</th>
-									<th>Starting Time</th>
-									<th>Seat Available</th>
-									<th>Price</th>
-									<th>Brand Name</th>
-									<th>Confirm</th>
-								</tr>
-								<tbody>
-									@if(isset($allSearchedAvailableTicket))
-										@foreach($allSearchedAvailableTicket as $item)
-											<form class="form-control">
-											<tr>
-											<td> {{ $item->brand_ticket_from}} </td>
-											<td> {{ $item->brand_ticket_to}} </td>
-											<td> {{ $item->brand_ticket_date}} </td>
-											<td> {{ $item->brand_ticket_seat}} </td>
-											<td> {{ $item->brand_ticket_price}} </td>
-											<td> {{ $item->brand_ticket_author_name}} </td>
-											<td> Confirm </td>
-											</tr>
-											</form>
-										@endforeach
-
-									@else
-                                        @foreach($allavailableTicket as $item)
-										<form class="form-control">
-                                        <tr>
-                                        <td> {{ $item->brand_ticket_from}} </td>
-                                        <td> {{ $item->brand_ticket_to}} </td>
-                                        <td> {{ $item->brand_ticket_date}} </td>
-                                        <td> {{ $item->brand_ticket_seat}} </td>
-                                        <td> {{ $item->brand_ticket_price}} </td>
-										<td> {{ $item->brand_ticket_author_name}} </td>
-                                        <td> Confirm </td>
-                                        </tr>
-										</form>
-                                        @endforeach
-
-									@endif
-								</tbody>
-							</table>
-						</form>
 					</div>
 				</div>
 				<!------------>

@@ -33,8 +33,6 @@ class CustomerController extends Controller
         $allBrandTicket = Brand_Ticket_Published::all();
         $allHighlights = AdminAddHighlight::all();
         $allavailableTicket = Brand_Ticket_Published::where('brand_ticket_date','>',Carbon::now())->where('brand_ticket_seat','>',0)->get();
-
-
         $userType = Auth::user()->role;
         if($userType=='Customer' || $userType == 'Admin'){
             return view('customer', compact('allRoutes', 'allHighlights', 'allavailableTicket', 'allBrandTicket'));
