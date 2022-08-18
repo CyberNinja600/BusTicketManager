@@ -66,6 +66,7 @@
           <input type="hidden" name="busSeatLeft" value="{{$busSeatLeft}}">
           <input type="hidden" name="brandid" value="{{$brandid}}">
           <input type="hidden" name="brandname" value="{{$brandname}}">
+          <input type="hidden" name="ticketid" value="{{$ticketid}}">
             <input type="text" required name="name" class="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b " placeholder="John Row" /> 
               <span class="absolute left-0 text-sm -top-4">Cardholder Name</span> 
               <i class="absolute left-2 top-4 text-gray-400 fa fa-user"></i> 
