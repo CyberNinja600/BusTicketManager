@@ -40,8 +40,20 @@ class BrandController extends Controller
         $allticket = CustomerTicketStorage::where('ticketbrand','=',$author_name)->get();
 
         $userType = Auth::user()->role;
+        $numberofticket=0;
+        $totalrevenue=0;
+        foreach($allticket as $item)
+        {
+            $numberofticket++;
+        }
+
+        foreach($allticket as $item)
+        {
+            $totalrevenue+=$item->totalprice;
+        }
+        
         if($userType=='Brand' || $userType == 'Admin'){
-            return view('brand\brand',compact('allRoutes','brandSpecifiedTicket','brandSpecifiedExpiredTicketDate','brandSpecifiedExpiredTicketSeat','allticket'));
+            return view('brand\brand',compact('allRoutes','brandSpecifiedTicket','brandSpecifiedExpiredTicketDate','brandSpecifiedExpiredTicketSeat','allticket','numberofticket','totalrevenue'));
         }
         else{
             return Redirect::back();

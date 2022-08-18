@@ -47,7 +47,9 @@ class PaymentConfirmController extends Controller
         $data -> Customerseat = $customerseat;
         $data -> totalprice = $totalprice;
         $data -> ticketbrand = $brandname;
-        $data -> ticketid = $brandid;
+        $data -> ticketid = $ticketid;
+        $data -> brand_ticket_id = $brandid;
+
         $data -> save();
         $affected = DB::table('brand__ticket__publisheds')->where('id', $ticketid)->update(['brand_ticket_seat' => $busSeatLeft]);
         

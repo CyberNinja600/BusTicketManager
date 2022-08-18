@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('totalprice');
             $table->string('ticketbrand');
             $table->string('ticketid');
+            $table->string('brand_ticket_id');
             $table->timestamps();
         });
     }

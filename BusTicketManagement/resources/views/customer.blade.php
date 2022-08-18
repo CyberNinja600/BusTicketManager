@@ -176,11 +176,42 @@
 							<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 								<p></p>
 								<h3>Tickets</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
+								<p>Thankyou For Choosing Us</p>
 							</div>
 						</div>
 					</div>
+					<table class="table align-items-center table-flush table-borderless">
+						<thead>
+							<tr>
+								<th>Customer Name</th>
+								<th>Customer ID</th>
+								<th>Brand</th>
+								<th>Ticket ID</th>
+								<th>Ticket Bought</th>
+								<th>Departure Date</th>
+								<th>From</th>
+								<th>To</th>
+								<th>Paid
+								<th>
+							</tr>
+						</thead>
+						<tbody>
+
+							@foreach($allticket as $item)
+							<tr>
+								<td>{{ $item->customer_name }}</td>
+								<td>{{ $item->customer_id }}</td>
+								<td>{{ $item->ticketbrand }}</td>
+								<td>{{ $item->ticketid }}</td>
+								<td>{{ $item->created_at}}</td>
+								<td>{{ $item->date }}</td>
+								<td>{{ $item->from }}</td>
+								<td>{{ $item->to }}</td>
+								<td>{{ $item->totalprice}}৳</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
 				</div>
 				<!------------>
 				<div id="fh5co-features">
