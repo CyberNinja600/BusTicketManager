@@ -54,7 +54,7 @@
           </a>
         </li>
         <li>
-          <a href="#registergit ">
+          <a href="#register ">
             <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
           </a>
         </li>
@@ -172,54 +172,32 @@
                 <table class="table align-items-center table-flush table-borderless">
                   <thead>
                     <tr>
-                      <th>Product</th>
-                      <th>Product ID</th>
-                      <th>Amount</th>
-                      <th>Date</th>
+                      <th>Customer Name</th>
+                      <th>Customer ID</th>
+                      <th>Brand</th>
+                      <th>Ticket ID</th>
+                      <th>Ticket Bought</th>
+                      <th>Departure Date</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Paid<th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Iphone 5</td>
-                      <td>#9405822</td>
-                      <td>$ 1250.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
 
-                    <tr>
-                      <td>Earphone GL</td>
-                      <td>#9405820</td>
-                      <td>$ 1500.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>HD Hand Camera</td>
-                      <td>#9405830</td>
-                      <td>$ 1400.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Clasic Shoes</td>
-                      <td>#9405825</td>
-                      <td>$ 1200.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Hand Watch</td>
-                      <td>#9405840</td>
-                      <td>$ 1800.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
-
-                    <tr>
-                      <td>Clasic Shoes</td>
-                      <td>#9405825</td>
-                      <td>$ 1200.00</td>
-                      <td>03 Aug 2017</td>
-                    </tr>
+                  @foreach($allticket as $item)
+                      <tr>
+                      <td>{{ $item->customer_name }}</td>
+                      <td>{{ $item->customer_id }}</td> 
+                      <td>{{ $item->ticketbrand }}</td>
+                      <td>{{ $item->ticketid }}</td>
+                      <td>{{ $item->created_at}}</td>
+                      <td>{{ $item->date }}</td>
+                      <td>{{ $item->from }}</td>
+                      <td>{{ $item->to }}</td>
+                      <td>{{ $item->totalprice}}৳</td>
+                      </tr>
+                      @endforeach
 
                   </tbody>
                 </table>
