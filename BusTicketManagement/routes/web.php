@@ -55,3 +55,5 @@ Route::POST('BrandDeleteTicketSubmit','App\Http\Controllers\BrandTicketPublished
 Route::POST('CustomerAddTicketSubmit','App\Http\Controllers\CustomerTicketInfoController@CustomerAddTicketSubmit');
 Route::POST('CustomerBuyTicketSubmit','App\Http\Controllers\CustomerBuyTicketController@CustomerBuyTicketSubmit');
 Route::POST('CustomerPaymentFinalSubmit','App\Http\Controllers\PaymentConfirmController@CustomerPaymentFinalSubmit');
+
+Route::POST('BrandRequestSubmit','App\Http\Controllers\BrandRequestServController@BrandRequestSubmit');

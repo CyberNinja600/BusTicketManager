@@ -41,16 +41,28 @@
             <div class="col-lg-6" >
                 <div class="card">
                     <div class="card-body">
+                        <h3>Register as a Brand</h3>
+                        <hr>
                         <div class="card-title">
-                            <form>
-                                <label for="fname">Name of the Brand:</label><br>
-                                <input class="form-control form-control-rounded" type="text" id="fname" name="fname"><br>
+                            <form action="BrandRequestSubmit" method="POST">
+                                @csrf 
+                                @if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
+                                    <label for="fname"> <big> Name of the Brand:</big></label><br>
+                                    <input class="form-control form-control-rounded" name="name" type="text" placeholder="Name" id="fname" name="fname"><br>
+
+                                    <label for="fname"> <big> Email:</big></label><br>
+                                    <input type="email" required name="email"class="form-control form-control-rounded" id="email" placeholder="Enter Your Email Address"><br>
+
+                                    <label for="lname"><big>Verification intel and queries:</label><br>
+                                    <textarea name="message" class="form-control form-control-rounded" placeholder=" Message" rows="2" cols="50" type="text" name="lname"></textarea>
                                 <hr>
-                                <label for="lname">Message:</label><br>
-                                <textarea class="form-control form-control-rounded" rows="05" cols="50" type="text" name="lname">
-                                </textarea>
-                                <hr>
-                                <div class="form-group card">
+                                <div class="form-group ">
                                     <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i> Register</button>
                                 </div>
                             </form>

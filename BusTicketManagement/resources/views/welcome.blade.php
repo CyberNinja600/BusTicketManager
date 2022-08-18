@@ -426,6 +426,9 @@
 
             @if (Route::has('register'))
             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+            <div>
+            <a href="{{ route('BrandRegister') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Brand Request</a>
+    </div>
             @endif
             @endauth
         </div>
