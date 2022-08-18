@@ -185,7 +185,7 @@
                   </thead>
                   <tbody>
 
-                  @foreach($allticket as $item)
+                    @foreach($allticket as $item)
                       <tr>
                       <td>{{ $item->customer_name }}</td>
                       <td>{{ $item->customer_id }}</td> 
