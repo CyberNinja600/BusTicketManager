@@ -56,6 +56,7 @@ class BrandController extends Controller
             return view('brand\brand',compact('allRoutes','brandSpecifiedTicket','brandSpecifiedExpiredTicketDate','brandSpecifiedExpiredTicketSeat','allticket','numberofticket','totalrevenue'));
         }
         else{
+            
             return Redirect::back();
         }
     }
