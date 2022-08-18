@@ -34,6 +34,7 @@ Route::get('/brand', [App\Http\Controllers\BrandController::class, 'index'])->na
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
 Route::get('/customerticket', [App\Http\Controllers\CustomerTicketController::class, 'index'])->name('customerticket');
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
+Route::get('/BrandRegister', [App\Http\Controllers\RegisterBrandController::class, 'index'])->name('BrandRegister');
 #Route::POST('AdminRouteAddSubmit',[App\Http\Controllers\AdminAddRouteController::class,'addRouteAdmin']);
 
 Route::POST('AdminRouteAddSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteAddSubmit');
