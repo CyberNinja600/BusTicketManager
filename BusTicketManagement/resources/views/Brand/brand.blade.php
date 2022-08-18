@@ -271,7 +271,16 @@
                                         <td> {{ $item->created_at   }} </td>
                                         </tr>
                                         @endforeach
-
+                                        @foreach($brandSpecifiedExpiredTicketSeat as $item)
+                                        <td> {{ $item->id}} </td>
+                                        <td> {{ $item->brand_ticket_from}} </td>
+                                        <td> {{ $item->brand_ticket_to}} </td>
+                                        <td> {{ $item->brand_ticket_date}} </td>
+                                        <td> {{ $item->brand_ticket_seat}} </td>
+                                        <td> {{ $item->brand_ticket_price}} </td>
+                                        <td> {{ $item->created_at   }} </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
