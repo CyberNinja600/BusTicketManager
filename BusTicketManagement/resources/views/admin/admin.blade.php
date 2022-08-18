@@ -40,11 +40,11 @@
     <!--Start sidebar-wrapper-->
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
       <div class="brand-logo">
-        <h3>
-          <a style="color:Pearl">
-              <i>Admin</i>
-          </a>
-        </h3>
+      <h3>
+                    <a style="color:#FFFAF0">
+                        <i>{{Auth::user()->name}}</i>
+                    </a>
+                </h3>
       </div>
       <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">MAIN NAVIGATION</li>
