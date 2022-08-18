@@ -85,7 +85,7 @@
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
 								<li class="active"><a href="#">Shop</a></li>
-								<li><a href="#fh5co-testimonial">Ticket-cart</a></li>
+								<li><a href="#card">Ticket-cart</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -112,6 +112,14 @@
 										<div class="tab-content">
 											<div role="tabpanel" class="tab-pane active" id="bus">
 												<div class="row">
+												@csrf
+                                @if (\Session::has('success'))
+                                <div class="alert alert-success">
+                                    <ul>
+                                        <li>{!! \Session::get('success') !!}</li>
+                                    </ul>
+                                </div>
+                                @endif
 													<form method="POST" action="CustomerAddTicketSubmit">
 														@csrf
 														<div class="col-xxs-12 col-xs-6 mt">
@@ -172,7 +180,7 @@
 				<!----------------------------------------------->
 				<div id="fh5co-tours" class="fh5co-section-gray">
 					<div class="card">
-						<div class="row">
+						<div class="row" id="card">
 							<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 								<p></p>
 								<h3>Tickets</h3>

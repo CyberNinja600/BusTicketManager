@@ -220,6 +220,73 @@
             </div>
           </div>
         </div>
+        <div class="card">
+        <div class="row">
+          <div class="col-12 col-lg-12">
+            <div class="card">
+              <div class="card-header">New Brand Request
+              </div>
+              <div class="table-responsive">
+                <table class="table align-items-center table-flush table-borderless " style="table-layout:fixed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Brand Name</th>
+                      <th>Brand ID</th>
+                      <th>Message</th>
+                      <th>created</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                  @foreach($allbrandreq as $item)
+                  <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->requestName }}</td> 
+                    <td>{{ $item->requestEmail }}</td>
+                    <td>{{ $item->requestMessage }}</td>
+                    <td>{{ $item->created_at}}</td>
+                    </tr>
+                    @endforeach
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+        <form action="BrandrequestDelete" method="POST">
+                @csrf
+                <div class="card-body">
+                  <div class="card-title">
+                    <H4>Delete Request</H4>
+                  </div>
+                  <hr>
+                  @empty(session()->get('deletedW'))
+                      @else
+                      <div class="card-body">
+                        <i style="color:#D0342C">{{session()->get('deletedW')}} </i>
+                      </div>
+                      @endempty
+                  <div class="form-group">
+                    <label for="input-6">User-Type</label>
+                    <select required class="form-control form-control-rounded" name="id" id="input-6" placeholder="select">
+                          <option> Select </option>
+                          @foreach($allbrandreq as $item)
+                          <option value="{{ $item->id }}"> {{ $item->id }} </option>
+                          @endforeach
+                    </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i>Exterminate</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+</div>
         <!--End Row-->
         <!--End Dashboard Content-->
 

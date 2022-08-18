@@ -53,7 +53,7 @@ class PaymentConfirmController extends Controller
         $data -> save();
         $affected = DB::table('brand__ticket__publisheds')->where('id', $ticketid)->update(['brand_ticket_seat' => $busSeatLeft]);
         
-        return redirect()->route('customer');
+        return redirect()->route('customer')->with('success', 'Thankyou for picking us');
 
 
     }

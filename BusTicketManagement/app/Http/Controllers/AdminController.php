@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\AllRoutes;
 use Illuminate\Http\Request;
 use App\Models\AdminAddHighlight;
+use App\Models\BrandRequest;
 use App\Models\CustomerTicketStorage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -36,6 +37,7 @@ class AdminController extends Controller
         $userType = Auth::user()->role;
         $numberofticket=0;
         $totalrevenue=0;
+        $allbrandreq = BrandRequest::all();
         foreach($allticket as $item)
         {
             $numberofticket++;
@@ -47,7 +49,7 @@ class AdminController extends Controller
         }
         if($userType == 'Admin'){
 
-            return view('admin\admin', compact('allRoutes', 'allHighlights', 'alluser','allticket','numberofticket','totalrevenue'));
+            return view('admin\admin', compact('allRoutes', 'allHighlights', 'alluser','allticket','numberofticket','totalrevenue','allbrandreq'));
         }
         else{
             return Redirect::back();
