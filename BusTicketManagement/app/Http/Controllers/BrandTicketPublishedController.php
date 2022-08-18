@@ -16,6 +16,7 @@ class BrandTicketPublishedController extends Controller
         // print_r($req->input());
 
         $author_id = Auth::user()->id;
+        $authod_name = Auth::user()->name;
         $data = new Brand_Ticket_Published;
         $data->brand_ticket_author_id = $author_id;
         $data -> brand_ticket_from = $req->input("Start_RouteName");
@@ -23,6 +24,7 @@ class BrandTicketPublishedController extends Controller
         $data -> brand_ticket_seat = $req->input("No_Seats");
         $data -> brand_ticket_date = $req->input("Start_Time");
         $data -> brand_ticket_price = $req->input("Ticket_Price");
+        $data -> brand_ticket_author_name = $authod_name;
         $data -> save();
         return redirect()->back();
     }

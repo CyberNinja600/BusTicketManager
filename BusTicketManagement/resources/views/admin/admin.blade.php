@@ -40,11 +40,11 @@
     <!--Start sidebar-wrapper-->
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
       <div class="brand-logo">
-        <h3>
-          <a style="color:Pearl">
-              <i>Admin</i>
-          </a>
-        </h3>
+      <h3>
+                    <a style="color:#FFFAF0">
+                        <i>{{Auth::user()->name}}</i>
+                    </a>
+                </h3>
       </div>
       <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">MAIN NAVIGATION</li>
@@ -54,13 +54,13 @@
           </a>
         </li>
         <li>
-          <a href="#form">
-            <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
+          <a href="#registergit ">
+            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
           </a>
         </li>
         <li>
-          <a href="forms.html">
-            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
+          <a href="#form">
+            <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
           </a>
         </li>
         <li>
@@ -231,11 +231,11 @@
         <!--End Dashboard Content-->
 
         <!----------creator studio---------------->
-        <div id="form">
+        <div id="register">
           <div class="row mt-3">
 
             <!-- register table--->
-            <div class="col-lg-6">
+            <div class="col-lg-6" >
               <form action="AdminRegisterSubmit" method="POST">
                 @csrf
                 <div class="card">

@@ -12,20 +12,20 @@
     <meta name="author" content="" />
     <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
     <!-- loader-->
-    <link href="public/assets/css/pace.min.css" rel="stylesheet" />
+    <link href="assets/css/pace.min.css" rel="stylesheet" />
     <script src="piblic/assets/js/pace.min.js"></script>
     <!--favicon-->
     <link rel="icon" href="public/assets/images/favicon.ico" type="image/x-icon">
     <!-- Vector CSS -->
-    <link href="public/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- simplebar CSS-->
-    <link href="public/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <!-- Bootstrap core CSS-->
-    <link href="public/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- animate CSS-->
-    <link href="public/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
     <!-- Icons CSS-->
-    <link href="public/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
     <!-- Sidebar CSS-->
     <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
     <!-- Custom Style-->
@@ -44,7 +44,7 @@
 
                 <h3>
                     <a style="color:#FFFAF0">
-                        <i>GreenLine</i>
+                        <i>{{Auth::user()->name}}</i>
                     </a>
                 </h3>
             </div>
@@ -53,16 +53,6 @@
                 <li>
                     <a href="#">
                         <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#form">
-                        <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms.html">
-                        <i class="zmdi zmdi-format-list-bulleted"></i> <span>Register</span>
                     </a>
                 </li>
                 <li>

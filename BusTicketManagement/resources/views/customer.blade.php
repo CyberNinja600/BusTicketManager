@@ -180,32 +180,6 @@
 
 							</div>
 						</div>
-						<form class="card">
-							<table class="table align-items-center table-flush table-borderless">
-								<tr>
-									<th>From</th>
-									<th>To</th>
-									<th>Starting Time</th>
-									<th>Seat Available</th>
-									<th>Price</th>
-									<th>Brand Name</th>
-									<th>Confirm</th>
-								</tr>
-								<tbody>
-                                        @foreach($allavailableTicket as $item)
-                                        <tr>
-                                        <td> {{ $item->brand_ticket_from}} </td>
-                                        <td> {{ $item->brand_ticket_to}} </td>
-                                        <td> {{ $item->brand_ticket_date}} </td>
-                                        <td> {{ $item->brand_ticket_seat}} </td>
-                                        <td> {{ $item->brand_ticket_price}} </td>
-										<td> {{ $item->brand_ticket_author_id}} </td>
-                                        <td> Confirm </td>
-                                        </tr>
-                                        @endforeach
-								</tbody>
-							</table>
-						</form>
 					</div>
 				</div>
 				<!------------>

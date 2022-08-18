@@ -6,6 +6,7 @@ use App\Models\AllRoutes;
 use Illuminate\Http\Request;
 use App\Models\AdminAddHighlight;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
@@ -30,7 +31,15 @@ class AdminController extends Controller
         $allRoutes = AllRoutes::all();
         $allHighlights = AdminAddHighlight::all();
         $alluser = User::where('id','!=',$notyou)->get();
-        return view('admin\admin', compact('allRoutes', 'allHighlights', 'alluser'));
-    }
+
+        $userType = Auth::user()->role;
+        if($userType == 'Admin'){
+
+            return view('admin\admin', compact('allRoutes', 'allHighlights', 'alluser'));
+        }
+        else{
+            return Redirect::back();
+        }
+    }   
 
 }
