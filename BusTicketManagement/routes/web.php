@@ -33,7 +33,7 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/brand', [App\Http\Controllers\BrandController::class, 'index'])->name('brand');
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer');
 Route::get('/customerticket', [App\Http\Controllers\CustomerTicketController::class, 'index'])->name('customerticket');
-
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
 #Route::POST('AdminRouteAddSubmit',[App\Http\Controllers\AdminAddRouteController::class,'addRouteAdmin']);
 
 Route::POST('AdminRouteAddSubmit','App\Http\Controllers\AdminAddRouteController@AdminRouteAddSubmit');
@@ -53,3 +53,4 @@ Route::POST('BrandDeleteTicketSubmit','App\Http\Controllers\BrandTicketPublished
 
 Route::POST('CustomerAddTicketSubmit','App\Http\Controllers\CustomerTicketInfoController@CustomerAddTicketSubmit');
 Route::POST('CustomerBuyTicketSubmit','App\Http\Controllers\CustomerBuyTicketController@CustomerBuyTicketSubmit');
+Route::POST('CustomerPaymentFinalSubmit','App\Http\Controllers\PaymentConfirmController@CustomerPaymentFinalSubmit');

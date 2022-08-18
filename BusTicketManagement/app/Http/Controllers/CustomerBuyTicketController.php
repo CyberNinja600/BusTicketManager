@@ -11,7 +11,19 @@ class CustomerBuyTicketController extends Controller
 {
     public function CustomerBuyTicketSubmit(Request $req)
     {
-        print_r($req->input());
-
+        $allvalues=$req->input();
+        $from=$req->input('from');
+        $to=$req->input('to');
+        $Busseat=$req->input('Brandseat');
+        $date=$req->input('date');
+        $Cuseat=$req->input('Customerseat');
+        $price=$req->input('price');
+        $totalprice=$price*$Cuseat;
+        $brandname=$req->input('ticketbrand');
+        $brandid=$req->input('ticketid');
+        $busSeatLeft=$Busseat-$Cuseat;
+        return view('checkout', compact('from','to','Busseat','date','Cuseat','price','totalprice','brandname','brandid','busSeatLeft'));
+        
+        // print_r($allvalues);
     }
 }
