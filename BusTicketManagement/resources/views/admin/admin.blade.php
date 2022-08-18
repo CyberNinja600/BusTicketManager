@@ -63,8 +63,23 @@
             <i class="zmdi zmdi-account-circle"></i> <span>Creator-Studio</span>
           </a>
         </li>
+        <hr>
+        <div class="card-body">
+          <li>
+            <a href="/customer">
+              <i class="zmdi zmdi zmdi-male-female"></i> <span>View As Client</span>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/brand">
+              <i class="zmdi zmdi-bus"></i> <span>View As Brand</span>
+            </a>
+          </li>
+      </div>
+      <hr>
         <li>
-          <a>
+          <a href="/">
             <i class="zamdi zamdi-format-list-bulleted"></i><span>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30%" height="30%" viewBox="0 0 1950 850" preserveAspectRatio="xMinYMin meet">
                 <rect id="svgEditorBackground" x="0" y="0" width="1950" height="850" style="fill: none; stroke: none;" />
